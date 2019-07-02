@@ -4,9 +4,9 @@ let maqueenmycb: Action
 let maqueene = "1"
 let maqueenparam = 0
 let alreadyInit = 0
-let IrPressEvent = 0*/
+let IrPressEvent = 0
 const MOTER_ADDRESSS = 0x10
-/*
+
 enum PingUnit {
     //% block="cm"
     Centimeters,
@@ -17,7 +17,7 @@ enum PingUnit {
 
 //% weight=10 color=#008B00 icon="\uf136" block="maqueen"
 namespace maqueen {
-
+ /*
     export class Packeta {
         public mye: string;
         public myparam: number;
@@ -29,7 +29,6 @@ namespace maqueen {
         //% blockId="M2" block="M2"
         M2 = 1
     }
-/*
     export enum aServos {
         //% blockId="S1" block="S1"
         S1 = 0,
@@ -129,10 +128,10 @@ namespace maqueen {
         IrPressEvent += 1
         onPressEvent(IrPressEvent, maqueencb)
     }
-    */
+    
     //% blockId=ultrasonic_sensor block="sensor unit|%unit"
     //% weight=95
-    /*
+    
     export function sensor(unit: PingUnit, maxCmDistance = 500): number {
         // send pulse  basic.pause=sleep control.waitMicros=delay
         pins.setPull(DigitalPin.P1, PinPullMode.PullNone);
@@ -156,7 +155,7 @@ namespace maqueen {
             default: return d;
         }
     }
-    */
+    
     //% weight=90
     //% blockId=motor_MotorRun block="Motor|%index|dir|%Dir|speed|%speed"
     //% speed.min=0 speed.max=255
@@ -219,5 +218,5 @@ namespace maqueen {
         buf[1] = angle;
         pins.i2cWriteBuffer(0x10, buf);
     }
-
+*/
 }
