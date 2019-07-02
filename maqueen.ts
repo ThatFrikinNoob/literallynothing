@@ -16,7 +16,7 @@ enum PingUnit {
 
 //% weight=10 color=#008B00 icon="\uf136" block="maqueen"
 namespace maqueen {
-/*
+
     export class Packeta {
         public mye: string;
         public myparam: number;
@@ -28,7 +28,7 @@ namespace maqueen {
         //% blockId="M2" block="M2"
         M2 = 1
     }
-
+/*
     export enum aServos {
         //% blockId="S1" block="S1"
         S1 = 0,
@@ -128,9 +128,10 @@ namespace maqueen {
         IrPressEvent += 1
         onPressEvent(IrPressEvent, maqueencb)
     }
-
+    */
     //% blockId=ultrasonic_sensor block="sensor unit|%unit"
     //% weight=95
+    /*
     export function sensor(unit: PingUnit, maxCmDistance = 500): number {
         // send pulse  basic.pause=sleep control.waitMicros=delay
         pins.setPull(DigitalPin.P1, PinPullMode.PullNone);
@@ -154,7 +155,7 @@ namespace maqueen {
             default: return d;
         }
     }
-
+    */
     //% weight=90
     //% blockId=motor_MotorRun block="Motor|%index|dir|%Dir|speed|%speed"
     //% speed.min=0 speed.max=255
@@ -201,32 +202,6 @@ namespace maqueen {
         pins.i2cWriteBuffer(0x10, buf);
     }
 
-    //% weight=20
-    //% blockId=read_Patrol block="Read Patrol|%patrol"
-    //% patrol.fieldEditor="gridpicker" patrol.fieldOptions.columns=2 
-    export function readPatrol(patrol: Patrol): number {
-        if (patrol == Patrol.PatrolLeft) {
-            return pins.digitalReadPin(DigitalPin.P13)
-        } else if (patrol == Patrol.PatrolRight) {
-            return pins.digitalReadPin(DigitalPin.P14)
-        } else {
-            return -1
-        }
-    }
-
-    //% weight=20
-    //% blockId=writeLED block="led|%led|ledswitch|%ledswitch"
-    //% led.fieldEditor="gridpicker" led.fieldOptions.columns=2 
-    //% ledswitch.fieldEditor="gridpicker" ledswitch.fieldOptions.columns=2
-    export function writeLED(led: LED, ledswitch: LEDswitch): void {
-        if (led == LED.LEDLeft) {
-            pins.digitalWritePin(DigitalPin.P8, ledswitch)
-        } else if (led == LED.LEDRight) {
-            pins.digitalWritePin(DigitalPin.P12, ledswitch)
-        } else {
-            return
-        }
-    }
 
     //% weight=90
     //% blockId=servo_ServoRun block="Servo|%index|angle|%angle"
@@ -243,5 +218,5 @@ namespace maqueen {
         buf[1] = angle;
         pins.i2cWriteBuffer(0x10, buf);
     }
-*/
+
 }
